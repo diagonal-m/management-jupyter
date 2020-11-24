@@ -1,0 +1,2 @@
+# management-jupyter
+勉強用JupyterNotebookのipynbファイルを管理するためのアプリ
