@@ -1,13 +1,17 @@
 {% extends 'management_jupyter_app/base.html' %}
 {% load static %}
 {% block content %}
-<div class="row">
+
   {% for management in management_list %}
-    <div class="col-6 col-md-2">
-      <a href="{% url 'management_jupyter_app:article' management.pk %}">
-        <p class="text-center">{{ management.title }}</p>
-      </a>
+    <div class="card mb-3">
+      <h4 class="card-header" style="color: black"><a href="{% url 'management_jupyter_app:article' management.pk %}">{{ management.title }}</a></h4>
+      <div class="card-body">
+        <p class="info" style="color: lightgray;">{{ management.created_at }}</p>
+        <p class="description" style="color: black;">{{ management.description | linebreaksbr | urlize }}</p>
+      </div>
     </div>
   {% endfor %}
-</div>
+
+{% include 'management_jupyter_app/page.html' %}
+
 {% endblock %}

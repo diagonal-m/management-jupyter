@@ -2,4 +2,5 @@
 .env
 media/
 management_jupyter_project/__pycache__/
+management_jupyter_app/__pycache__/
 

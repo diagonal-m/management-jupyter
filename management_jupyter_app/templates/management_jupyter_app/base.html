@@ -12,7 +12,7 @@
     <!-- my css -->
     <link rel="stylesheet" href="{% static 'management_jupyter_app/main.css' %}">
 
-    <title>satoichiチャンネル</title>
+    <title>satoichi channel</title>
   </head>
   <body>
     <!-- 上部メニュー -->
@@ -30,12 +30,16 @@
             <a class="nav-link" href="{% url 'management_jupyter_app:upload' %}">Upload</a>
           </li>
         </ul>
+         <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'management_jupyter_app:index' %}">
+           <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
+           <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+         </form>
       </div>
     </nav><!-- 上部メニュー終わり -->
     <div class="container">
       <div class="jumbotron">
-        <h1 class="display-3">satoichiチャンネル</h1>
-        <p class="lead">個人エンジニアブログ</p>
+        <h2 class="display-3">satoichi channel</h2>
+        <p class="lead">個人的技術系まとめサイト</p>
         <hr class="my-2">
       </div>
       {% block content %}{% endblock %}
