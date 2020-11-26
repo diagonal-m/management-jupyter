@@ -1,0 +1,9 @@
+{% extends 'management_jupyter_app/base.html' %}
+{% block content %}
+<h1>{{ management.title }}</h1>
+<p>{{ management.description }}</p>
+<p class="text-muted">投稿日: {{ management.created_at }} - 更新日: {{ management.updated_at }}</p>
+<div class="embed-responsive embed-responsive-16by9" style="height: 1000px;">
+  <iframe class="embed-responsive-item" src="{{ management.upload.url }}" allowfullscreen></iframe>
+</div>
+{% endblock %}

@@ -1,2 +1,5 @@
 .DS_Store
 .env
+media/
+management_jupyter_project/__pycache__/
+

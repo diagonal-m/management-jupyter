@@ -148,8 +148,6 @@ $ docker-compose run --rm jupyter_web python3 manage.py migrate
 
 
 
-
-
 #### アプリ起動
 
  docker-compose upでローカルサーバーを起動する

@@ -1,0 +1,13 @@
+{% extends 'management_jupyter_app/base.html' %}
+{% load static %}
+{% block content %}
+<div class="row">
+  {% for management in management_list %}
+    <div class="col-6 col-md-2">
+      <a href="{% url 'management_jupyter_app:article' management.pk %}">
+        <p class="text-center">{{ management.title }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</div>
+{% endblock %}
