@@ -24,6 +24,21 @@ class IndexView(generic.ListView):
         return queryset
 
 
+class CategoryView(generic.ListView):
+    model = Management
+    paginate_by = 10
+
+    def get_queryset(self):
+        """
+        category = get_object_or_404(Category, pk=self.kwargs['pk'])
+        queryset = Post.objects.order_by('-created_at').filter(category=category)
+        """
+        category_pk = self.kwargs['pk']
+        queryset = Management.objects.order_by('-created_at').filter(category__pk=category_pk)
+
+        return queryset
+
+
 class CreateView(generic.CreateView):
     """アップロード画面"""
     model = Management

@@ -5,11 +5,10 @@
   {% for management in management_list %}
   <div class="card bg-dark">
     <div class="card-body">
-      <h6 class="card-subtitle mb-2 text-muted">{{ management.created_at }}</h6>
+      <h6 class="card-subtitle mb-2 text-muted">{{ management.created_at }} / {{ management.category }}</h6>
       <a class="card-link" href="{% url 'management_jupyter_app:article' management.pk %}">
         <h4 class="card-title">{{ management.title }}</h4>
       </a>
-
       <p class="card-text">
         {{ management.description | linebreaksbr | urlize }}
       </p>

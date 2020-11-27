@@ -3,4 +3,5 @@
 media/
 management_jupyter_project/__pycache__/
 management_jupyter_app/__pycache__/
+management_jupyter_app/migrations/__pycache__/
 
