@@ -3,6 +3,11 @@ body {
   color: #fff;
 }
 
-.jumbotron {
-  background-color: #161616;
+.margin {
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.nav-item {
+  margin-top: 10px;
 }

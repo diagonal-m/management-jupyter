@@ -24,7 +24,9 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'management_jupyter_app:index' %}">Home</a>
+            <a class="nav-link" href="{% url 'management_jupyter_app:index' %}">
+              <h5>satoichi channel</h5>
+            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{% url 'management_jupyter_app:upload' %}">Upload</a>
@@ -36,15 +38,12 @@
          </form>
       </div>
     </nav><!-- 上部メニュー終わり -->
-    <div class="container">
-      <div class="jumbotron">
-        <h2 class="display-3">satoichi channel</h2>
-        <p class="lead">個人的技術系まとめサイト</p>
-        <hr class="my-2">
-      </div>
+    <div class="container" style="margin-top: 30px">
       {% block content %}{% endblock %}
     </div>
-
+    <footer class="bg-black text-white text-center py-3">
+    <p>produce by satoichi</p>
+    </footer>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>

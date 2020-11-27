@@ -3,13 +3,18 @@
 {% block content %}
 
   {% for management in management_list %}
-    <div class="card mb-3">
-      <h4 class="card-header" style="color: black"><a href="{% url 'management_jupyter_app:article' management.pk %}">{{ management.title }}</a></h4>
-      <div class="card-body">
-        <p class="info" style="color: lightgray;">{{ management.created_at }}</p>
-        <p class="description" style="color: black;">{{ management.description | linebreaksbr | urlize }}</p>
-      </div>
+  <div class="card bg-dark">
+    <div class="card-body">
+      <h6 class="card-subtitle mb-2 text-muted">{{ management.created_at }}</h6>
+      <a class="card-link" href="{% url 'management_jupyter_app:article' management.pk %}">
+        <h4 class="card-title">{{ management.title }}</h4>
+      </a>
+
+      <p class="card-text">
+        {{ management.description | linebreaksbr | urlize }}
+      </p>
     </div>
+  </div>
   {% endfor %}
 
 {% include 'management_jupyter_app/page.html' %}
