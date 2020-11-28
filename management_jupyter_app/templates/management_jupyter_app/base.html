@@ -28,9 +28,11 @@
               <h5>satoichi channel</h5>
             </a>
           </li>
+	  {% if user.is_superuser %}
           <li class="nav-item">
             <a class="nav-link" href="{% url 'management_jupyter_app:upload' %}">Upload</a>
           </li>
+	  {% endif %}
         </ul>
          <form class="form-inline my-2 my-lg-0" method="get" action="{% url 'management_jupyter_app:index' %}">
            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">

@@ -1,0 +1,18 @@
+body {
+  background-color: #161616;
+  color: #fff;
+}
+
+.margin {
+  height: 50px;
+  margin-bottom: 50px;
+}
+
+.nav-item {
+  margin-top: 10px;
+}
+
+.category-list {
+  margin-top: 20px;
+  text-align: center;
+}
