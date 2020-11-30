@@ -39,6 +39,24 @@ class CategoryView(generic.ListView):
         return queryset
 
 
+class TagView(generic.ListView):
+    model = Management
+
+    def get_queryset(self):
+        """
+        category = get_object_or_404(Category, pk=self.kwargs['pk'])
+        queryset = Post.objects.order_by('-created_at').filter(category=category)
+        """
+        tag_pk = self.kwargs['pk']
+        queryset = Management.objects.order_by('-created_at').filter(tag__pk=tag_pk)
+
+        return queryset
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['tag_key'] = self.kwargs['pk']
+        return context
+
 class CreateView(generic.CreateView):
     """アップロード画面"""
     model = Management

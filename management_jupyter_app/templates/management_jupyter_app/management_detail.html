@@ -2,7 +2,16 @@
 {% block content %}
 <p class="text-muted">投稿日: {{ management.created_at }} - 更新日: {{ management.updated_at }}</p>
 <h1>{{ management.title }}</h1>
-<p>{{ management.description }}</p>
+<ul class="tags" style="padding-left: 0">
+      {% for tag in  management.tag.all %}
+        <a class="tag-link" href="{% url 'management_jupyter_app:tag' tag.pk %}">
+          <button type="button" class="btn btn-secondary" style="font-size: 0.7em; padding: 3px">
+            {{ tag }}
+          </button>
+        </a>
+      {% endfor %}
+      </ul>
+<p>{{ management.description | linebreaksbr }}</p>
 <div class="embed-responsive embed-responsive-16by9" style="height: 1000px;">
   <iframe class="embed-responsive-item" src="{{ management.upload.url }}" allowfullscreen></iframe>
 </div>

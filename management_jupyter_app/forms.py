@@ -5,7 +5,7 @@ from .models import Management
 class ManagementCreateForm(forms.ModelForm):
     class Meta:
         model = Management
-        fields = ('title', 'description', 'category', 'upload')
+        fields = ('title', 'description', 'tag', 'category', 'upload')
         widgets = {
             'title': forms.TextInput(attrs={  # <input type="text" class="form-control"
                 'class': 'form-control',
@@ -15,6 +15,9 @@ class ManagementCreateForm(forms.ModelForm):
             }),
             'category': forms.Select(attrs={
                 'class': "form-control",
+            }),
+            'tag': forms.SelectMultiple(attrs={
+                'class': "form-control"
             }),
             'upload': forms.ClearableFileInput(attrs={
                 'class': "form-control-file",

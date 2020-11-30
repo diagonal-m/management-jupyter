@@ -10,5 +10,6 @@ urlpatterns = [
     path('upload/', views.CreateView.as_view(), name='upload'),
     # e.g.) http://localhost:8001/article/3のときはviewsのCreateViewクラスを指定する
     path('article/<int:pk>/', views.PlayView.as_view(), name='article'),
-    path('category/<int:pk>/', views.CategoryView.as_view(), name='category')
+    path('category/<int:pk>/', views.CategoryView.as_view(), name='category'),
+    path('tag/<int:pk>/', views.TagView.as_view(), name='tag'),
 ]

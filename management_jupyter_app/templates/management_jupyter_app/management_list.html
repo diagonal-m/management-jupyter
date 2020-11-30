@@ -7,8 +7,17 @@
     <div class="card-body">
       <h6 class="card-subtitle mb-2 text-muted">{{ management.created_at }} / {{ management.category }}</h6>
       <a class="card-link" href="{% url 'management_jupyter_app:article' management.pk %}">
-        <h4 class="card-title">{{ management.title }}</h4>
+        <h3 class="card-title">{{ management.title }}</h3>
       </a>
+      <ul class="tags" style="padding-left: 0">
+      {% for tag in  management.tag.all %}
+        <a class="tag-link" href="{% url 'management_jupyter_app:tag' tag.pk %}">
+          <button type="button" class="btn btn-secondary" style="font-size: 0.7em; padding: 3px">
+            {{ tag }}
+          </button>
+        </a>
+      {% endfor %}
+      </ul>
       <p class="card-text">
         {{ management.description | linebreaksbr | urlize }}
       </p>

@@ -11,6 +11,16 @@ class Category(models.Model):
         return self.name
 
 
+class Tag(models.Model):
+    """
+    Tagモデル
+    """
+    name = models.CharField('タグ', max_length=50)
+
+    def __str__(self):
+        return self.name
+
+
 class Management(models.Model):
     """
     htmlアップロード
@@ -27,6 +37,7 @@ class Management(models.Model):
         verbose_name='カテゴリ',
         on_delete=models.PROTECT
     )
+    tag = models.ManyToManyField(Tag, verbose_name='タグ')
 
     def __str__(self):
         return self.title
